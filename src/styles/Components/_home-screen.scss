@@ -1,0 +1,70 @@
+
+
+.home__screen {
+    background: url('../../images/home-background.jpg') no-repeat center center / cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+    padding: 2.5rem 0;
+}
+
+.team__container {
+    // background-color: rgba($color: black, $alpha: .55);
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+}
+
+.team__title {
+    font-size: $fz-big;
+    color: black;
+    -webkit-text-stroke: 2px white;
+}
+
+.hero__card__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero__card {
+    color: $dark-color;
+    width: 100%;
+}
+
+.hero__card hr {
+    background-color: black;
+}
+
+.hero__card .hero__img {
+    opacity: .88;
+    cursor: pointer;
+    transition: opacity .35s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.hero__card .hero__name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $fz-extra-regular;
+}
+
+.hero__card .hero__btn__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    // flex-wrap: wrap;
+}
+
+.hero__card .hero__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    font-size: $fz-small;
+}

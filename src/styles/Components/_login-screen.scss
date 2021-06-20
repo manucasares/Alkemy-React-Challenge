@@ -1,0 +1,62 @@
+
+.login_screen {
+    min-height: 100vh;
+    background: url('../../images/login-background.jpg') no-repeat center center / cover;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    font-size: $fz-small;
+    padding: 3rem 2rem 1rem;
+    margin: 50vh auto 0;
+    text-align: center;
+    background-color: rgba(20, 20, 20, .7);
+    border-radius: 5px;
+    color: white;
+    transform: translateY(-50%);
+
+    & :is( .input, .btn ) {
+        border-radius: 3px;
+        padding: .5rem 1rem;
+    }
+}
+
+.login__form .title {
+    margin-bottom: 1.5rem;
+    font-size: $fz-large;
+}
+
+.login__form .input-container {
+    position: relative;
+}
+
+.login__form .input-container i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: $fz-small;
+}
+
+.login__form .login-input {
+    background-color: transparent;
+    border: 1px solid rgba($color: $light-color, $alpha: .75) !important;
+    color: $light-color !important;
+    border: none;
+}
+
+.login__form .login-input::placeholder {
+    color: rgba($color: $light-color, $alpha: .7);
+}
+
+.login__form .btn {
+    background-color: $main-color;
+    color: $light-color;
+    font-size: $fz-small;
+    &:hover {
+        background-color: lighten($color: $main-color, $amount: 12);
+    }
+}

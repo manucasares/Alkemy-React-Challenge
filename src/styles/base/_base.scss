@@ -1,0 +1,62 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr {
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    background-color: white;
+    margin-bottom: 1.2rem;
+}
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.input {
+    width: 100%;
+}
+
+.btn {
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.btn[disabled] {
+    opacity: .6;
+    pointer-events: none;
+}
+
+.error-container {
+    margin: .5rem 0 0 0 ;
+}
+
+.alert {
+    padding: .4rem 0;
+}
