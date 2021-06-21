@@ -1,7 +1,7 @@
 
 
 .home__screen {
-    background: url('../../images/home-background.jpg') no-repeat center center / cover;
+    background: url('../../assets/images/home-background.jpg') no-repeat center center / cover;
     background-attachment: fixed;
     min-height: 100vh;
     color: white;
@@ -9,7 +9,6 @@
 }
 
 .team__container {
-    // background-color: rgba($color: black, $alpha: .55);
     padding: 1.5rem 2rem;
     margin-top: 2rem;
     border-radius: 3px;
@@ -17,8 +16,38 @@
 
 .team__title {
     font-size: $fz-big;
-    color: black;
-    -webkit-text-stroke: 2px white;
+    color: $light-color;
+    text-align: center;
+}
+
+.stats__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.stats {
+    background-color: rgba($color: $dark-color, $alpha: .8);
+    padding: 2rem 1rem;
+    color: $light-color;
+    width: 100%;
+}
+
+.stat__name {
+    color: red;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.stats h3 {
+    margin-bottom: 1.5rem;
+    font-size: $fz-large;
+}
+
+.stats p {
+    text-transform: capitalize;
+    font-size: $fz-regular;
 }
 
 .hero__card__container {
@@ -26,7 +55,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .hero__card {
@@ -35,17 +64,28 @@
 }
 
 .hero__card hr {
-    background-color: black;
+    background-color: white;
 }
 
 .hero__card .hero__img {
-    opacity: .88;
+    opacity: .8;
     cursor: pointer;
     transition: opacity .35s ease;
 
     &:hover {
         opacity: 1;
     }
+}
+
+.hero__card .card-body {
+    background-color: $dark-color;
+    color: $light-color;
+}
+
+.hero__card .hero__name-btn__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero__card .hero__name {
@@ -58,13 +98,58 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    // flex-wrap: wrap;
 }
 
-.hero__card .hero__btn {
+.hero__card .icon {
+    font-size: $fz-regular;
+    cursor: pointer;
+    transition: transform .3s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.hero__card .hero__stats {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-left: 0;
+}
+
+.hero__card .hero__stat {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 45%;
-    font-size: $fz-small;
+    justify-content: space-around;
+    font-size: $fz-regular;
+
+    .svg {
+        width: $fz-extra-regular;
+    }
+    
+}
+
+.stat__icon .svg::before {
+    content: attr(data-stat);
+    position: absolute;
+    top: -100%;
+    background-color: $light-color;
+    color: $dark-color;
+    text-transform: capitalize;
+    border-radius: 3px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity .3s ease;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.stat__icon .svg:is(:hover, :focus)::before {
+    opacity: 1;
+    width: auto;
+    height: auto;
+    font-size: $fz-regular;
+    padding: .3rem 1rem;
 }

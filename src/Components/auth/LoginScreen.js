@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import axios from 'axios';
 
+import { Email, Lock } from '../../assets/icons'; 
 
 const validate = ( formValues ) => {
 
@@ -89,7 +90,7 @@ export const LoginScreen = ( { setToken } ) => {
                                 value={ formik.values.email }
                                 autoComplete="off"
                             />
-                            <i className="far fa-envelope"></i>
+                            <Email />
                         </div>
                         <div className="input-container">
                             <input
@@ -103,7 +104,7 @@ export const LoginScreen = ( { setToken } ) => {
                                 value={ formik.values.password }
                                 autoComplete="off"
                             />
-                            <i className="fas fa-lock"></i>
+                            <Lock />
                         </div>
                         <button
                             className="btn"

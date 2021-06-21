@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-import { HeroTeam } from './HeroTeam';
+import { Team } from './Team';
 
 export const HomeScreen = () => {
 
@@ -40,12 +40,12 @@ export const HomeScreen = () => {
         <div className="home__screen">
             
             <main className="container">
-                <HeroTeam
+                <Team
                     alignment="good"
                     heroes={ heroes }
                 />
     
-                <HeroTeam
+                <Team
                     alignment="bad"
                     heroes={ heroes }
                 />

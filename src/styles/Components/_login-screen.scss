@@ -1,7 +1,7 @@
 
 .login_screen {
     min-height: 100vh;
-    background: url('../../images/login-background.jpg') no-repeat center center / cover;
+    background: url('../../assets/images/login-background.jpg') no-repeat center center / cover;
 }
 
 .login__form {
@@ -27,18 +27,19 @@
 .login__form .title {
     margin-bottom: 1.5rem;
     font-size: $fz-large;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
 
 .login__form .input-container {
     position: relative;
 }
 
-.login__form .input-container i {
+.login__form .input-container svg {
     position: absolute;
     top: 50%;
     right: 1rem;
     transform: translateY(-50%);
-    font-size: $fz-small;
+    width: $fz-regular;
 }
 
 .login__form .login-input {
@@ -46,6 +47,7 @@
     border: 1px solid rgba($color: $light-color, $alpha: .75) !important;
     color: $light-color !important;
     border: none;
+    font-size: $fz-regular;
 }
 
 .login__form .login-input::placeholder {

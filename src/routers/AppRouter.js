@@ -6,7 +6,7 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 import { LoginScreen } from '../Components/auth/LoginScreen';
-import { HomeScreen } from '../Components/private/HomeScreen';
+import { HomeScreen } from '../Components/pages/HomeScreen';
 
 
 export const AppRouter = () => {
@@ -14,7 +14,6 @@ export const AppRouter = () => {
     const [ token, setToken ] = useState( null );
 
     useEffect(() => {
-        
         setToken( localStorage.getItem( 'token' ) || '' );
     }, [] );
 
