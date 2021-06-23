@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 
 // Base
-@import './base/base';
 @import './base/settings';
+@import './base/base';
 
 // Components
 @import './Components/login-screen';
+@import './Components/search';
 @import './Components/home-screen';
+@import './Components/spinner';
 
 // Media-queries
 @import './mq';

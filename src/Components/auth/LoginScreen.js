@@ -107,7 +107,7 @@ export const LoginScreen = ( { setToken } ) => {
                             <Lock />
                         </div>
                         <button
-                            className="btn"
+                            className="btn input"
                             type="submit"
                             disabled={ false }
                         >

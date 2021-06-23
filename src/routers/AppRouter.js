@@ -6,7 +6,7 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 import { LoginScreen } from '../Components/auth/LoginScreen';
-import { HomeScreen } from '../Components/pages/HomeScreen';
+import { HomeScreen } from '../Components/home/HomeScreen';
 
 
 export const AppRouter = () => {

@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import { HeroCard } from "./HeroCard";
 import { getAvgWeightAndHeight, getTotalPowerStat } from '../../helpers/getStats';
 
+import { powerStats } from '../../data/stats';
 
-export const Team = ( { alignment = '', heroes = [] } ) => {
+
+export const Team = ( { alignment = '', heroes, setHeroes } ) => {
 
     const [ team, setTeam ] = useState( [] );
     const [ powerTeamStats, setPowerTeamStats ] = useState( [] );
@@ -14,7 +16,7 @@ export const Team = ( { alignment = '', heroes = [] } ) => {
     // Seteamos los teams
     useEffect(() => {
         
-        const teamByAlignment = heroes.filter( hero => hero.biography.alignment === alignment );
+        const teamByAlignment = heroes.filter( hero => hero.biography?.alignment === alignment );
 
         setTeam( teamByAlignment );
 
@@ -34,6 +36,7 @@ export const Team = ( { alignment = '', heroes = [] } ) => {
 
         const entries = Object.entries( totalPowerStats );
 
+        // Ordenamos las stats de forma descendente
         const powerStatsSorted = entries.sort( ( a, b ) => b[ 1 ] - a[ 1 ] );
 
         setPowerTeamStats( powerStatsSorted );
@@ -42,7 +45,7 @@ export const Team = ( { alignment = '', heroes = [] } ) => {
 
         setAvgHeightWeight( avgStats );
 
-    }, [ team ])
+    }, [ team, heroes ])
 
     return (
         <section>
@@ -59,22 +62,35 @@ export const Team = ( { alignment = '', heroes = [] } ) => {
                 <hr />
 
                 <section className="stats__container">
-                    <div className="stats power">
+                    
+                    <div className="stats">
                         <h3> Powerstats </h3>
                         <hr />
-                        {
-                            powerTeamStats.map( stat => {
-                                
-                                const [ nameStat, value ] = stat;
-                                return (
-                                    <p
-                                        key={ nameStat }
-                                    >
-                                        <span className="stat__name">{ nameStat }:</span> { value }
-                                    </p>
-                                )
-                            })
-                        }
+                        <div className="power">
+                            {
+                                powerTeamStats.map( stat => {
+    
+                                    const [ nameStat, value ] = stat;
+    
+                                    // Buscamos ícono de la stat
+                                    const Icon = powerStats.find( stat => stat.name === nameStat ).Icon;
+    
+                                    return (
+                                        <p
+                                            key={ nameStat }
+                                        >
+                                            <span
+                                                className="stat__icon svg"
+                                                data-stat={ nameStat }
+                                            >
+                                                <Icon />
+                                            </span>
+                                            { value }
+                                        </p>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                     
                     <div className="stats avgs">
@@ -91,6 +107,8 @@ export const Team = ( { alignment = '', heroes = [] } ) => {
     
                             <HeroCard
                                 hero={ hero }
+                                heroes={ heroes }
+                                setHeroes={ setHeroes }
                                 key={ hero.id }
                             />
                         ) )

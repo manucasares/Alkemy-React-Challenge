@@ -34,12 +34,23 @@ hr {
     margin-bottom: 1.2rem;
 }
 
-.open-sans {
-    font-family: 'Open Sans', sans-serif;
+.input-container {
+    position: relative;
+}
+
+.input-container svg {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: $fz-regular;
 }
 
 .input {
     width: 100%;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    border: none;
 }
 
 .btn {
@@ -56,6 +67,11 @@ hr {
     margin: .5rem 0 0 0 ;
 }
 
+// Sobreescribimos bootstrap
+.card-title {
+    margin: 0;
+}
+
 .alert {
-    padding: .4rem 0;
+    padding: .4rem 1rem;
 }

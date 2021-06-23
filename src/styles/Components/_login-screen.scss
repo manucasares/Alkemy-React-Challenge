@@ -17,29 +17,12 @@
     border-radius: 5px;
     color: white;
     transform: translateY(-50%);
-
-    & :is( .input, .btn ) {
-        border-radius: 3px;
-        padding: .5rem 1rem;
-    }
 }
 
 .login__form .title {
     margin-bottom: 1.5rem;
     font-size: $fz-large;
     font-family: 'Sedgwick Ave Display', cursive;
-}
-
-.login__form .input-container {
-    position: relative;
-}
-
-.login__form .input-container svg {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    width: $fz-regular;
 }
 
 .login__form .login-input {
@@ -55,10 +38,10 @@
 }
 
 .login__form .btn {
-    background-color: $main-color;
+    background-color: $blue-color;
     color: $light-color;
     font-size: $fz-small;
     &:hover {
-        background-color: lighten($color: $main-color, $amount: 12);
+        background-color: lighten($color: $blue-color, $amount: 12);
     }
 }

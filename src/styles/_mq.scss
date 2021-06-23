@@ -3,12 +3,21 @@
 @media ( min-width: 768px ) {
 
     .hero__card {
-        width: 48%;
+        width: 45%;
     }
-
 }
 
 @media ( min-width: 1024px ) {
+
+    .search__results .hero__found {
+        width: 48%;
+    }
+
+    .stats__container {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
     .hero__card {
         width: 30%;
     }

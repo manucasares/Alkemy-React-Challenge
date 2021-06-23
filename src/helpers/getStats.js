@@ -5,8 +5,8 @@ export const getTotalPowerStat = ( team, stat ) => {
     const powerStatsMapped = team.map( hero => hero.powerstats );
 
     const totalStat = powerStatsMapped.reduce(
-                        ( totalStat, currentStat ) => totalStat + +currentStat[ stat ], 0
-    );
+                        ( totalStat, currentStat ) => totalStat + +currentStat[ stat ],
+    0 );
 
     return totalStat;
 }
@@ -28,8 +28,8 @@ export const getAvgWeightAndHeight = ( team ) => {
 
     const [ summedHeight, summedWeight ] = summedStats;
 
-    return [
-        ( summedHeight / team.length ).toFixed( 2 ),
-        ( summedWeight / team.length ).toFixed( 2 )
-    ]
+    let avgHeight = summedHeight ? `${ ( summedHeight / team.length ).toFixed( 2 ) }cm` : 'No hay personajes en el equipo.';
+    let avgWeight = summedWeight ? `${ ( summedWeight / team.length ).toFixed( 2 ) }kg` : 'No hay personajes en el equipo.';
+
+    return [ avgHeight, avgWeight ];
 }
